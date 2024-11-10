@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Resource - StudyShare</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="base.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-blue-600 text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-xl font-bold">StudyShare</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="px-3 py-2 rounded-md hover:bg-blue-700">Home</a>
+                    <a href="share-resource.html" class="px-3 py-2 rounded-md hover:bg-blue-700">Share Resource</a>
+                    <a href="findresource.html" class="px-3 py-2 rounded-md hover:bg-blue-700">Find Resource</a>
+                    <a href="charts.html" class="px-3 py-2 rounded-md hover:bg-blue-700">Charts</a>
+                    <a href="Aboutus.html" class="px-3 py-2 rounded-md hover:bg-blue-700">About Us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <!-- Search and Filters Section -->
+        <div class="bg-white shadow rounded-lg p-6 mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <!-- Search Bar -->
+                <div class="md:col-span-2">
+                    <label for="search" class="block text-sm font-medium text-gray-700">Search Resources</label>
+                    <div class="mt-1 relative rounded-md shadow-sm">
+                        <input type="text" id="search" name="search" 
+                            class="block w-full pr-10 border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" 
+                            placeholder="Search by title, subject, or tags...">
+                        <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                            <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resource Type Filter -->
+                <div>
+                    <label for="type" class="block text-sm font-medium text-gray-700">Resource Type</label>
+                    <select id="type" name="type" class="mt-1 block w-full rounded-md border-gray-300 focus:ring-blue-500 focus:border-blue-500">
+                        <option value="">All Types</option>
+                        <option value="document">Document</option>
+                        <option value="video">Video</option>
+                        <option value="article">Article</option>
+                        <option value="presentation">Presentation</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <!-- Sort By -->
+                <div>
+                    <label for="sort" class="block text-sm font-medium text-gray-700">Sort By</label>
+                    <select id="sort" name="sort" class="mt-1 block w-full rounded-md border-gray-300 focus:ring-blue-500 focus:border-blue-500">
+                        <option value="relevance">Most Relevant</option>
+                        <option value="date-new">Newest First</option>
+                        <option value="date-old">Oldest First</option>
+                        <option value="popular">Most Popular</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Tags Filter -->
+            <div class="mt-6">
+                <label class="block text-sm font-medium text-gray-700 mb-2">Popular Tags</label>
+                <div class="flex flex-wrap gap-2">
+                    <button class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm hover:bg-blue-200">Mathematics</button>
+                    <button class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm hover:bg-blue-200">Programming</button>
+                    <button class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm hover:bg-blue-200">Physics</button>
+                    <button class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm hover:bg-blue-200">Chemistry</button>
+                    <button class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm hover:bg-blue-200">Literature</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Section -->
+        <div class="space-y-6">
+            <!-- Result Card 1 -->
+            <div class="bg-white shadow rounded-lg p-6">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="text-lg font-medium text-gray-900">Calculus Made Easy: Derivatives and Integrals</h3>
+                        <p class="mt-1 text-sm text-gray-500">Comprehensive guide to basic calculus concepts</p>
+                    </div>
+                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                        Document
+                    </span>
+                </div>
+                <div class="mt-4">
+                    <div class="flex items-center text-sm text-gray-500">
+                        <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                        Added on Jan 15, 2024
+                    </div>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                            mathematics
+                        </span>
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                            calculus
+                        </span>
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                            beginner
+                        </span>
+                    </div>
+                </div>
+                <div class="mt-4 flex justify-between items-center">
+                    <div class="flex items-center space-x-4">
+                        <button class="inline-flex items-center px-3 py-1 border border-transparent text-sm font-medium rounded-md text-blue-700 bg-blue-100 hover:bg-blue-200">
+                            View Resource
+                        </button>
+                        <button class="inline-flex items-center px-3 py-1 border border-transparent text-sm font-medium rounded-md text-gray-700 bg-gray-100 hover:bg-gray-200">
+                            Download
+                        </button>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500">
+                        <svg class="h-5 w-5 text-gray-400 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                        </svg>
+                        1.2k views
+                    </div>
+                </div>
+            </div>
+
+            <!-- Result Card 2 -->
+            <div class="bg-white shadow rounded-lg p-6">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="text-lg font-medium text-gray-900">Introduction to Python Programming</h3>
+                        <p class="mt-1 text-sm text-gray-500">Video tutorial series for beginners</p>
+                    </div>
+                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-800">
+                        Video
+                    </span>
+                </div>
+                <div class="mt-4">
+                    <div class="flex items-center text-sm text-gray-500">
+                        <svg class="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                        Added on Jan 20, 2024
+                    </div>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                            programming
+                        </span>
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                            python
+                        </span>
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                            beginner
+                        </span>
+                    </div>
+                </div>
+                <div class="mt-4 flex justify-between items-center">
+                    <div class="flex items-center space-x-4">
+                        <button class="inline-flex items-center px-3 py-1 border border-transparent text-sm font-medium rounded-md text-blue-700 bg-blue-100 hover:bg-blue-200">
+                            Watch Video
+                        </button>
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500">
+                        <svg class="h-5 w-5 text-gray-400 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                        </svg>
+                        2.5k views
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6 rounded-lg">
+                <div class="flex-1 flex justify-between sm:hidden">
+                    <button class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                        Previous
+                    </button>
+                    <button class="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                        Next
+                    </button>
+                </div>
+                <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+                    <div>
+                        <p class="text-sm text-gray-700">
+                            Showing <span class="font-medium">1</span> to <span class="font-medium">10</span> of <span class="font-medium">97</span> results
+                        </p>
+                    </div>
+                    <div>
+                        <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px">
+                            <button class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                                Previous
+                            </button>
+                            <button class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">
+                                1
+                            </button>
+                            <button class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-blue-50 text-sm font-medium text-blue-600 hover:bg-blue-100">
+                                2
+                            </button>
+                            <button class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">
+                                3
+                            </button>
+                            <button class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">
+                                4
+                            </button>
+                            <button class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50">
+                                5
+                            </button>
+                            <button class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                                Next
+                            </button>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-12">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <p>&copy; 2024 Students Shared Resource Library. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Add JavaScript for interactivity -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Search functionality
+            const searchInput = document.getElementById('search');
+            searchInput.addEventListener('input', function(e) {
+                // Add search logic here
+                console.log('Searching for:', e.target.value);
+            });
+
+            // Filter by type
+            const typeSelect = document.getElementById('type');
+            typeSelect.addEventListener('change', function(e) {
+                // Add filter logic here
+                console.log('Filtering by type:', e.target.value);
+            });
+
+            // Sort functionality
+            const sortSelect = document.getElementById('sort');
+            sortSelect.addEventListener('change', function(e) {
+                // Add sorting logic here
+                console.log('Sorting by:', e.target.value);
+            });
+
+            // Tag filtering
+            const tagButtons = document.querySelectorAll('.tag-button');
+            tagButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Add tag filtering logic here
+                    console.log('Filtering by tag:', this.textContent);
+                });
+            });
+
+            // Pagination
+            const paginationButtons = document.querySelectorAll('nav button');
+            paginationButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Add pagination logic here
+                    console.log('Navigating to page:', this.textContent);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

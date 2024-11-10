@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyShare Analytics</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-blue-600 text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold">StudyShare</span>
+                </div>
+
+                
+                    <div class="flex items-center space-x-4">
+                        <a href="index.html" class="px-3 py-2 rounded-md hover:bg-blue-700">Home</a>
+                        <a href="share-resource.html" class="px-3 py-2 rounded-md hover:bg-blue-700">Share Resource</a>
+                        <a href="findresource.html" class="px-3 py-2 rounded-md hover:bg-blue-700">Find Resource</a>
+                        <a href="charts.html" class="px-3 py-2 rounded-md hover:bg-blue-700">Charts</a>
+                        <a href="Aboutus.html" class="px-3 py-2 rounded-md hover:bg-blue-700">About Us</a>
+                    </div>
+                
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-white shadow">
+        <div class="max-w-7xl mx-auto py-6 px-4">
+            <h1 class="text-3xl font-bold text-gray-900">Resource Analytics</h1>
+        </div>
+    </header>
+
+    <!-- Charts Grid -->
+    <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+            <!-- Resource Types Chart -->
+            <div class="bg-white rounded-lg shadow p-6">
+                <h2 class="text-xl font-semibold mb-4">Resource Types Distribution</h2>
+                <canvas id="resourceTypesChart"></canvas>
+            </div>
+
+            <!-- Monthly Usage Chart -->
+            <div class="bg-white rounded-lg shadow p-6">
+                <h2 class="text-xl font-semibold mb-4">Monthly Resource Usage</h2>
+                <canvas id="monthlyUsageChart"></canvas>
+            </div>
+
+            <!-- Top Subjects Chart -->
+            <div class="bg-white rounded-lg shadow p-6">
+                <h2 class="text-xl font-semibold mb-4">Most Popular Subjects</h2>
+                <canvas id="topSubjectsChart"></canvas>
+            </div>
+
+            <!-- User Engagement Chart -->
+            <div class="bg-white rounded-lg shadow p-6">
+                <h2 class="text-xl font-semibold mb-4">User Engagement Trends</h2>
+                <canvas id="userEngagementChart"></canvas>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-12">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <p>&copy; 2024 Students Shared Resource Library. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Sample data for charts
+        const resourceTypesData = {
+            labels: ['PDFs', 'Videos', 'Practice Tests', 'Study Guides', 'Interactive Materials'],
+            datasets: [{
+                data: [35, 25, 15, 15, 10],
+                backgroundColor: [
+                    '#3B82F6',
+                    '#60A5FA',
+                    '#93C5FD',
+                    '#BFDBFE',
+                    '#DBEAFE'
+                ]
+            }]
+        };
+
+        const monthlyUsageData = {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+            datasets: [{
+                label: 'Downloads',
+                data: [1200, 1900, 2300, 2800, 2400, 2900],
+                borderColor: '#3B82F6',
+                tension: 0.4,
+                fill: false
+            }]
+        };
+
+        const topSubjectsData = {
+            labels: ['Mathematics', 'Computer Science', 'Physics', 'Chemistry', 'Biology'],
+            datasets: [{
+                label: 'Number of Resources',
+                data: [300, 250, 200, 180, 150],
+                backgroundColor: '#3B82F6'
+            }]
+        };
+
+        const userEngagementData = {
+            labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+            datasets: [{
+                label: 'Active Users',
+                data: [500, 800, 1200, 1500],
+                borderColor: '#3B82F6',
+                tension: 0.4,
+                fill: true,
+                backgroundColor: 'rgba(59, 130, 246, 0.1)'
+            }]
+        };
+
+        // Create charts
+        window.onload = function() {
+            new Chart(document.getElementById('resourceTypesChart'), {
+                type: 'pie',
+                data: resourceTypesData,
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+
+            new Chart(document.getElementById('monthlyUsageChart'), {
+                type: 'line',
+                data: monthlyUsageData,
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            new Chart(document.getElementById('topSubjectsChart'), {
+                type: 'bar',
+                data: topSubjectsData,
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            new Chart(document.getElementById('userEngagementChart'), {
+                type: 'line',
+                data: userEngagementData,
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        };
+    </script>
+</body>
+</html>
